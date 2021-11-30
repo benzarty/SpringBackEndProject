@@ -85,6 +85,12 @@ public class FactureServiceImpl implements FactureService {
 		return  facturerepo.getChiffreAffaireParCategorieClient(categorieClient,startDate,endDate);
 		
 	}
+	
+	@Override
+	public  int UpdateModePaiement(Long idfacture, String Modepaiement) {
+		return  facturerepo.UpdateModePaiement(idfacture,Modepaiement);
+		
+	}
 
 	
 

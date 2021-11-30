@@ -89,7 +89,13 @@ public class FactureController {
 			   return  facrepo.getChiffreAffaireParCategorieClient(c,startDate,endDate);
 			
 			}
-			
+		
+			//http://localhost:8089/SpringMVC/client/modify-client
+			@PutMapping("/modifymodepaiementfacture/{idfacture}/{Modepaiement}")
+			@ResponseBody
+			public int modifymodepaiementfacture(@PathVariable Long idfacture,@PathVariable String Modepaiement) {
+			return factureserv.UpdateModePaiement(idfacture,Modepaiement);
+			}
 	
 
 }

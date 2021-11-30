@@ -19,5 +19,5 @@ public interface FactureService  {
 	Facture UpdateFacture(Facture f);
 
 	float getChiffreAffaireParCategorieClient(CategorieClient categorieClient,Date startDate, Date endDate) ;
-	
+	int UpdateModePaiement(Long idfacture,String Modepaiement);
 }
