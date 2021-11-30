@@ -1,8 +1,10 @@
 package tn.esprit.spring.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.ApiOperation;
+import tn.esprit.spring.entity.CategorieClient;
 import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.entity.Facture;
 import tn.esprit.spring.repository.FactureRepository;
@@ -78,6 +81,15 @@ public class FactureController {
 	return factureserv.UpdateFacture(facture);
 	}
 	
+	
+	// http://localhost:8089/SpringMVC/client/retrieve-all-clients
+			@GetMapping("/getChiffreAffaireParCategorieClient/{c}/{startDate}/{endDate}")
+			@ResponseBody
+			float getChiffreAffaireParCategorieClient(@PathVariable CategorieClient c,@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date endDate) {
+			   return  facrepo.getChiffreAffaireParCategorieClient(c,startDate,endDate);
+			
+			}
+			
 	
 
 }

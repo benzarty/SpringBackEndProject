@@ -1,8 +1,10 @@
 package tn.esprit.spring.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -48,6 +50,15 @@ public class DetailFactureController {
 	}
 	
 	
+	//http://localhost:8089/SpringMVC/client/retrieve-client/8
+		@GetMapping("/retrieveDetailFactureBYidfacture/{idfacture}")
+		@ResponseBody
+		public List<detailFacture> retrieveDetailFactureBYidfacture(@PathVariable("idfacture") Long idfacture) {
+		return detailfac.retrieveDetailFactureByidFacture(idfacture);
+		}
+	
+	
+	
 
 	// http://localhost:8089/SpringMVC/Produit/add-produit
 	@PostMapping("/add-DetailFacture/{idproduit}/{idfacture}")
@@ -69,7 +80,21 @@ public class DetailFactureController {
 	}
 
 	
-	
+	//http://localhost:8089/SpringMVC/client/retrieve-client/8
+		@GetMapping("/getRevenuBrutProduit/{idProduit}/{startDate}/{endDate}")
+		@ResponseBody
+		public float getRevenuBrutProduit(@PathVariable("idProduit") Long idProduit,@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date endDate)
+		{
+		return detailfac.getRevenuBrutProduit(idProduit, startDate, endDate);
+		}
+
+		
+		//http://localhost:8089/SpringMVC/client/modify-client
+		@PutMapping("/modify-detailfacture")
+		@ResponseBody
+		public detailFacture modifyClient(@RequestBody detailFacture Detaill) {
+		return detailfac.updateDetailFacture(Detaill);
+		}
 
 	
 	

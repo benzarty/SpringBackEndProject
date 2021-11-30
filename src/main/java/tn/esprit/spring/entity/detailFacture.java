@@ -44,7 +44,6 @@ public class detailFacture  implements Serializable {
 	
 	
 	
-	
 	@ManyToOne
 	@JsonIgnore
 	private Produit Totheparentdetailfacture; 

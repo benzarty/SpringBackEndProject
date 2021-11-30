@@ -31,7 +31,6 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Table( name = "DetailProduit")
 public class DetailProduit implements Serializable {
 	@Id

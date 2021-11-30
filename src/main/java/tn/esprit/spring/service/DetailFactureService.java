@@ -1,5 +1,6 @@
 package tn.esprit.spring.service;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -17,5 +18,10 @@ public interface DetailFactureService {
 	detailFacture updateDetailFacture(detailFacture c);
 
 	detailFacture retrieveDetailFacture(Long id);
+	
+	List<detailFacture> retrieveDetailFactureByidFacture(Long idfacture);
+	float getRevenuBrutProduit(Long idProduit, Date startDate, Date endDate);
+
+	
 
 }

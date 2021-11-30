@@ -36,7 +36,6 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Table( name = "Rayon")
 public class Rayon implements Serializable  {
 	@Id

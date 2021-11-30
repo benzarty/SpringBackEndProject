@@ -1,9 +1,9 @@
 package tn.esprit.spring.service;
 
+import java.util.Date;
 import java.util.List;
 
-
-
+import tn.esprit.spring.entity.CategorieClient;
 import tn.esprit.spring.entity.Facture;
 
 
@@ -18,5 +18,6 @@ public interface FactureService  {
 	
 	Facture UpdateFacture(Facture f);
 
+	float getChiffreAffaireParCategorieClient(CategorieClient categorieClient,Date startDate, Date endDate) ;
 	
 }

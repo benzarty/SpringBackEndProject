@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 
+import tn.esprit.spring.entity.CategorieClient;
 import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.entity.Facture;
 

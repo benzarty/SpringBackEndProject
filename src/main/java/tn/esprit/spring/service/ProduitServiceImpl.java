@@ -1,5 +1,6 @@
 package tn.esprit.spring.service;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+import tn.esprit.spring.entity.CategorieClient;
 import tn.esprit.spring.entity.DetailProduit;
 import tn.esprit.spring.entity.Fournisseur;
 import tn.esprit.spring.entity.Produit;
@@ -105,6 +107,7 @@ public class ProduitServiceImpl implements ProduitService {
 		
 		
 	}
+	
 
 	@Override
 	public void assignFournisseurToProduit(Long idfourn, Long produitId) {
@@ -126,6 +129,9 @@ public class ProduitServiceImpl implements ProduitService {
 	
 		
 	}
+
+	
+
 	
 	
 

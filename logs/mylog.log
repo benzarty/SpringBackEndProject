@@ -1,0 +1,36 @@
+2021-11-29 23:57:23.435  INFO 8916 --- [main] t.e.spring.SpringBootAppApplication      : Starting SpringBootAppApplication using Java 16.0.2 on DESKTOP-PF452FH with PID 8916 (C:\Users\Morning Beautiful\Desktop\Projet4eme\Spring\SpringBootApp\target\classes started by Morning Beautiful in C:\Users\Morning Beautiful\Desktop\Projet4eme\Spring\SpringBootApp)
+2021-11-29 23:57:23.436  INFO 8916 --- [main] t.e.spring.SpringBootAppApplication      : No active profile set, falling back to default profiles: default
+2021-11-29 23:57:23.921  INFO 8916 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-29 23:57:23.966  INFO 8916 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 8 JPA repository interfaces.
+2021-11-29 23:57:24.284  INFO 8916 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8800 (http)
+2021-11-29 23:57:24.292  INFO 8916 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-29 23:57:24.292  INFO 8916 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-29 23:57:24.369  INFO 8916 --- [main] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-11-29 23:57:24.369  INFO 8916 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 899 ms
+2021-11-29 23:57:24.488  INFO 8916 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-29 23:57:24.517  INFO 8916 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-11-29 23:57:24.596  INFO 8916 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-29 23:57:24.656  INFO 8916 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-29 23:57:24.757  INFO 8916 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-29 23:57:24.766  INFO 8916 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-29 23:57:25.421  INFO 8916 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-29 23:57:25.428  INFO 8916 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 23:57:25.909  WARN 8916 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-29 23:57:25.997  INFO 8916 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-29 23:57:26.205  INFO 8916 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8800 (http) with context path '/SpringMVC'
+2021-11-29 23:57:26.205  INFO 8916 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-29 23:57:26.220  INFO 8916 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-29 23:57:26.236  INFO 8916 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-29 23:57:26.384  INFO 8916 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: modifyClientUsingPUT_1
+2021-11-29 23:57:26.392  INFO 8916 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: retrieveDetailFactureUsingGET_1
+2021-11-29 23:57:26.423  INFO 8916 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createProduitUsingPOST_1
+2021-11-29 23:57:26.455  INFO 8916 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: retrieveStockUsingGET_1
+2021-11-29 23:57:26.470  INFO 8916 --- [main] t.e.spring.SpringBootAppApplication      : Started SpringBootAppApplication in 3.285 seconds (JVM running for 3.719)
+2021-11-29 23:57:30.556  INFO 8916 --- [http-nio-8800-exec-1] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-29 23:57:30.556  INFO 8916 --- [http-nio-8800-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-29 23:57:30.557  INFO 8916 --- [http-nio-8800-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-29 23:57:30.598  INFO 8916 --- [http-nio-8800-exec-1] t.e.spring.service.ClientServiceImpl     : Clienttn.esprit.spring.entity.Client@4f0278f4
+2021-11-29 23:57:58.324  INFO 8916 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-29 23:57:58.373  INFO 8916 --- [RMI TCP Connection(4)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 23:57:58.374  INFO 8916 --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-29 23:57:58.380  INFO 8916 --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

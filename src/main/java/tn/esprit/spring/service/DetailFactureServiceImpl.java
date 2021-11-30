@@ -1,10 +1,12 @@
 package tn.esprit.spring.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.entity.DetailProduit;
 import tn.esprit.spring.entity.Facture;
 import tn.esprit.spring.entity.Produit;
@@ -62,6 +64,7 @@ public class DetailFactureServiceImpl implements DetailFactureService{
 		Produit prod=produitrepo.findById(idProduit).orElse(null);
 		
 		
+		c.setPourcentageRemise(5);
 		Float prix=prod.getPrixUnitaire();
 		Float prixtotal=prix*c.getQte();
 		
@@ -85,6 +88,25 @@ public class DetailFactureServiceImpl implements DetailFactureService{
 		
 		
 	}
+
+
+
+	@Override
+	public List<detailFacture> retrieveDetailFactureByidFacture(Long idfacture) {
+		// TODO Auto-generated method stub
+		return detailrepo.getDetailFactureByFacture(idfacture);
+	}
+
+
+
+	@Override
+	public float getRevenuBrutProduit(Long idProduit, Date startDate, Date endDate) {
+		return detailrepo.getRevenuBrutProduit(idProduit, startDate, endDate);
+	}
+
+
+
+	
 
 
 

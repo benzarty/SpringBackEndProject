@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import lombok.extern.slf4j.Slf4j;
+import tn.esprit.spring.entity.CategorieClient;
 import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.repository.ClientRepository;
 @Slf4j
@@ -22,13 +23,13 @@ public class ClientServiceImpl implements ClientService {
 	@Override
 	public List<Client> retrieveAllClients() {
 		 List<Client> clients=(List<Client>)clientrepo.findAll() ;
-		/* for(Client client: clients)
+		 for(Client client: clients)
 		 {
 			 log.info("Client"+client);
 			 //bech 5aliw trace 3la 5edma mete3ena
 				//starter web hiya bech negedou biha exposition service
 
-		 }*/
+		 }
 		 
 		 return clients;
 	}
@@ -65,6 +66,9 @@ public class ClientServiceImpl implements ClientService {
 		return clientrepo.retrieveClientsByDateNaissance( d1,d2);
 
 	}
+
+
+
 
 
 

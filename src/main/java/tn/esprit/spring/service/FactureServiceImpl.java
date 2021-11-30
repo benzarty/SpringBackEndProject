@@ -1,5 +1,6 @@
 	package tn.esprit.spring.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -8,6 +9,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import lombok.extern.slf4j.Slf4j;
+import tn.esprit.spring.entity.CategorieClient;
 import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.entity.Facture;
 import tn.esprit.spring.repository.ClientRepository;
@@ -76,6 +78,12 @@ public class FactureServiceImpl implements FactureService {
 	@Override
 	public Facture UpdateFacture(Facture f) {
 		return facturerepo.save(f);
+	}
+
+	@Override
+	public  float getChiffreAffaireParCategorieClient(CategorieClient categorieClient, Date startDate, Date endDate) {
+		return  facturerepo.getChiffreAffaireParCategorieClient(categorieClient,startDate,endDate);
+		
 	}
 
 	

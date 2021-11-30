@@ -9,6 +9,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import tn.esprit.spring.entity.CategorieClient;
 import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.entity.Facture;
 
@@ -23,7 +24,9 @@ public interface FactureRepository extends CrudRepository<Facture, Long> {
 	List<Facture> getFacturesByClient(@Param("idClient") Long idClient);
 	
 	
+	@Query("SELECT SUM(montantFacture) FROM Facture c WHERE c.ClientFacure.categorieClient= :categorieClient AND c.datefacture BETWEEN :startDate and :endDate")
+    float getChiffreAffaireParCategorieClient(@Param("categorieClient") CategorieClient categorieClient,@Param("startDate") Date startDate,@Param("endDate") Date endDate);
 	
 	
-
+//@Param("d1") Date startDate,@Param("d2") Date endDate
 }

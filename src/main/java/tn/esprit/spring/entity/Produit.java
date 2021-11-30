@@ -35,7 +35,6 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Table( name = "Produit")
 public class Produit implements Serializable{
 	@Id
@@ -55,7 +54,7 @@ public class Produit implements Serializable{
 	private Set<detailFacture> detailFacture;
 	
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL) 
 	private DetailProduit Detailproduit;  //w yeblokiha min 8adi bi jsonignore
 	
 
