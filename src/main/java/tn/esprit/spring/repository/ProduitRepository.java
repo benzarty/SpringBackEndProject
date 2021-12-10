@@ -23,7 +23,11 @@ public interface ProduitRepository extends JpaRepository<Produit, Long> {
 	List<Produit> retrieveAllProduitsbyid(@Param("idd") Long idd);
 
 	
-	
+
+	 
+	@Query("SELECT c FROM Produit c WHERE c.idProduit= :id2")
+	List<Produit> retrieveAllFournisseursbyid(@Param("id2") Long id2);
+
 	
 	
 	

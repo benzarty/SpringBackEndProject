@@ -3,6 +3,8 @@ package tn.esprit.spring.service;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+
 import tn.esprit.spring.entity.CategorieClient;
 import tn.esprit.spring.entity.DetailProduit;
 import tn.esprit.spring.entity.Produit;
@@ -14,16 +16,20 @@ public interface ProduitService {
 
 	Produit retrieveProduit(Long id);
 	
-	void deleteProduit(Long id);
 
-	Produit updateProduit(Produit c);
 	void assignProduitToStockgo(Long idProduit, Long stockproduit);
 	
-	void assignFournisseurToProduit(Long fournisseurId, Long produitId) ;
 	
 
 
-	
+	Produit addProduitfile(Produit p, String file);
+
+	void deleteproduit(Long id);
+	Produit updateproduit(Produit p);
+	void afecterProduitimage(Long idProduit, String file);
+
+	public List<Produit> findProductsWithSorting(String field);
+	public Page<Produit> findProductsWithPagination(int offset,int pageSize);
 	
 
 

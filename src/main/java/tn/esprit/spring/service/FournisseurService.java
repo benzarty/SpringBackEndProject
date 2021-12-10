@@ -18,4 +18,5 @@ public interface FournisseurService {
 
 	Fournisseur retrieveFournisseur(Long id);
 	
+	
 }

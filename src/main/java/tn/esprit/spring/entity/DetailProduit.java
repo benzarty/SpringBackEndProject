@@ -23,13 +23,14 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
+@RequiredArgsConstructor
 @AllArgsConstructor
 @Table( name = "DetailProduit")
 public class DetailProduit implements Serializable {
@@ -47,9 +48,9 @@ public class DetailProduit implements Serializable {
 	
 	
 	
-	@OneToOne(mappedBy="Detailproduit")
+	@OneToOne(mappedBy="Detailproduit")  //detailproduit
 	@JsonIgnore
-	private Produit Detailproduitt; 
+	private Produit Detailproduitt;  //detailproduit;
 	
 	
 	

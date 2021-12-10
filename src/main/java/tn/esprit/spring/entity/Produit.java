@@ -44,18 +44,20 @@ public class Produit implements Serializable{
 	private String code;
 	private String libelle;
 	private float prixUnitaire;
+	//@Column(nullable=true)
+	private String fileName;
 	
 	
 	
 
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="Totheparentdetailfacture")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="Totheparentdetailfacture")   //="produit"
 	@JsonIgnore
-	private Set<detailFacture> detailFacture;
+	private Set<detailFacture> detailFacture; //details;
 	
 	
-	@OneToOne(cascade = CascadeType.ALL) 
-	private DetailProduit Detailproduit;  //w yeblokiha min 8adi bi jsonignore
+	@OneToOne(cascade = CascadeType.MERGE) 
+	private DetailProduit Detailproduit;  
 	
 
 	
@@ -63,16 +65,16 @@ public class Produit implements Serializable{
 	
 	@ManyToOne
 	@JsonIgnore
-	private Stock stockproduit; 
+	private Stock stockproduit;  //stock;
 	
 	@ManyToOne
 	@JsonIgnore
-    private Rayon rayonproduit; 
+    private Rayon rayonproduit;  //rayon;
 	
 	
 	@ManyToMany(cascade = CascadeType.ALL) 
 	@JsonIgnore
-	private Set<Fournisseur> fournisseurproduit;
+	private Set<Fournisseur> fournisseurproduit; //fournisseurs;
 
 	
 	

@@ -1,12 +1,16 @@
 package tn.esprit.spring.service;
 
 import java.util.Date;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import org.hibernate.internal.build.AllowSysOut;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
@@ -53,11 +57,14 @@ public class ProduitServiceImpl implements ProduitService {
 	@Autowired
 	FournisseurRepository fourrepo;
 	
+	//@Autowired
+	//FounisseurServiceImpl FounisseurServiceImpl;
+	
 
 	@Override
 	public List<Produit> retrieveAllProduits() {
 		// TODO Auto-generated method stub
-		return (List<Produit>) produitRepo.findAll();
+		return (List<Produit>) this.produitRepo.findAll();
 	}
 
 	@Override
@@ -69,11 +76,19 @@ public class ProduitServiceImpl implements ProduitService {
 		
 		p.setRayonproduit(rayon);
 		p.setStockproduit(stock);
-		DetailProduit dp=detailrepo.save(p.getDetailproduit());
-		p.setDetailproduit(dp);
-		produitRepo.save(p);
+		if(p.getDetailproduit().getDateCreation() == null)
+		{
+			p.getDetailproduit().setDateCreation(new Date());
+			p.getDetailproduit().setDateDerniereModification(new Date());
+		} else {
+			p.getDetailproduit().setDateDerniereModification(new Date());
+		}
+				
+		DetailProduit d = detailrepo.save(p.getDetailproduit());
+
+	   p.setDetailproduit(d);
+		return produitRepo.save(p);
 		
-		return p;
 	}	
 
 	@Override
@@ -83,13 +98,13 @@ public class ProduitServiceImpl implements ProduitService {
 	}
 
 	@Override
-	public void deleteProduit(Long id) {
+	public void deleteproduit(Long id) {
 		produitRepo.deleteById(id);
 		
 	}
 
 	@Override
-	public Produit updateProduit(Produit c) {
+	public Produit updateproduit(Produit c) {
 	
 		return produitRepo.save(c);
 	}
@@ -109,26 +124,37 @@ public class ProduitServiceImpl implements ProduitService {
 	}
 	
 
+
+
 	@Override
-	public void assignFournisseurToProduit(Long idfourn, Long produitId) {
-		
-		Fournisseur fourni = fourrepo.getById(idfourn);
-		Produit produit=produitRepo.getById(produitId);
-		
-		
-		
-		
-        Set<Fournisseur> listfournisseur = new HashSet<Fournisseur>();
-        listfournisseur =produit.getFournisseurproduit();
-        listfournisseur.add(fourni);
-		
-        produit.getFournisseurproduit().add(fourni);
-        produitRepo.save(produit);
-			
-		
-	
-		
+	public Produit addProduitfile(Produit p, String file) {
+		p.setFileName(file);
+				return produitRepo.save(p);
 	}
+
+	
+	
+	@Override
+	public void afecterProduitimage(Long idProduit, String file) {
+		// TODO Auto-generated method stub
+		Produit produit=produitRepo.findById(idProduit).orElse(null);// TODO Auto-generated method stub
+		produit.setFileName(file);
+		produitRepo.save(produit);
+		}
+
+	@Override
+	public List<Produit> findProductsWithSorting(String field) {
+		// TODO Auto-generated method stub
+				return  produitRepo.findAll(Sort.by(Sort.Direction.ASC,field));
+	}
+
+	@Override
+	public Page<Produit> findProductsWithPagination(int offset, int pageSize) {
+		Page<Produit> products = produitRepo.findAll(PageRequest.of(offset, pageSize));
+        return  products;
+	}
+
+	
 
 	
 
