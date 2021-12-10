@@ -68,7 +68,6 @@ public class DetailFactureController {
 		detailFacture p=detailfac.addDetailFacture(p1, idproduit, idfacture);
 			return p;
 		
-
 	}
 
 	
@@ -98,7 +97,25 @@ public class DetailFactureController {
 
 	
 	
-	
+		
+		// http://localhost:8089/SpringMVC/Produit/add-produit
+		@PostMapping("/add-DetailFacture2/{idproduit}/{idclient}")
+		@ResponseBody
+		public void createProduit2(@RequestBody detailFacture p1,@PathVariable Long idproduit,@PathVariable Long idclient) {
+			
+			detailfac.addDetailFacture2(p1, idproduit, idclient);
+				
+			
+		}
+
+		
+		//http://localhost:8089/SpringMVC/client/retrieve-client/8
+		@GetMapping("/NbProduitVenduPardate/{idProduit}/{startDate}/{endDate}")
+		@ResponseBody
+		public Float NbProduitVenduPardate(@PathVariable("idProduit") Long idProduit,@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date endDate) {
+		return detailfac.NbProduitVenduPardate(idProduit,startDate,endDate);
+		}
+			
 	
 	
 

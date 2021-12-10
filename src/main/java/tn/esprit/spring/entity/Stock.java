@@ -22,8 +22,12 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -40,12 +44,28 @@ import lombok.ToString;
 @AllArgsConstructor
 @Table( name = "Stock")
 public class Stock implements Serializable {
+	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	
+	//@NotBlank(message="")
 	@Column(name="idStock")
 	private Long idStock;
+	
+	@NotNull
+	//@Size(min = 1, max = 9999)
+	@Min(1)
+	@Max(9999)
 	private Integer qte;
+	
+	@NotNull
+	@Min(1)
+	@Max(9999)
 	private Integer qteMin;
+	
+	@NotNull
+	@Size(min=3, max=30)
+	//@Column(nullable = false, length=30)
 	private String libelleStock;
 	
 	

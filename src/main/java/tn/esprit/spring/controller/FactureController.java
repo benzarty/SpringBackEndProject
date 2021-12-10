@@ -21,6 +21,7 @@ import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.entity.Facture;
 import tn.esprit.spring.repository.FactureRepository;
 import tn.esprit.spring.service.FactureService;
+import tn.esprit.spring.service.FactureServiceImpl;
 
 @RestController
 @RequestMapping("/facture")
@@ -28,6 +29,9 @@ public class FactureController {
 	
 	@Autowired
 	FactureService factureserv;
+	
+	@Autowired
+	FactureServiceImpl facserviceimpl;
 	
 	@Autowired
 	FactureRepository facrepo;
@@ -52,6 +56,18 @@ public class FactureController {
 	   return factureserv.getFacturesByClient(idClient);
 	
 	}
+	
+	
+	// http://localhost:8089/SpringMVC/client/retrieve-all-clients
+	@GetMapping("/getFacturesHistorique/{idClient}")
+	@ResponseBody
+     List<Facture>getFacturesHistorique(@PathVariable("idClient") Long idClient) {
+	   return factureserv.getFacturesHistoriqueClient(idClient);
+	
+	}
+	
+	
+	
 	
 	// http://localhost:8089/SpringMVC/client/add-client
 	@PostMapping("/addFacture/{idClient}")
@@ -96,6 +112,50 @@ public class FactureController {
 			public int modifymodepaiementfacture(@PathVariable Long idfacture,@PathVariable String Modepaiement) {
 			return factureserv.UpdateModePaiement(idfacture,Modepaiement);
 			}
+			
+			
+			
+			
+			
+			
+			
+			
+			// http://localhost:8089/SpringMVC/client/retrieve-all-clients
+			@GetMapping("/getChiffreaffairetoday")
+			@ResponseBody
+			float getChiffreaffairetoday() {
+			   return  factureserv.getChiffreaffairetoday();
+			
+			}
+			
+			// http://localhost:8089/SpringMVC/client/retrieve-all-clients
+			@GetMapping("/getNbFactureLastMonth")
+			@ResponseBody
+			float getNbFactureLastMonth() {
+			   return  factureserv.getNbFactureLastMonth();
+			
+			}
+			
+			
+			// http://localhost:8089/SpringMVC/client/retrieve-all-clients
+			@GetMapping("/getChiffreaffaireLastMonth")
+			@ResponseBody
+			float getChiffreaffaireLastMonth() {
+			   return  factureserv.getChiffreaffaireLastMonth();
+			
+			}
+			
+			
+		
+			
+		
+			//http://localhost:8089/SpringMVC/client/modify-client
+			@PutMapping("/closefacture")
+			@ResponseBody
+			public void closefacture(@RequestBody Facture facture) {
+			 factureserv.Closefacture(facture);
+			}
+			
 	
 
 }

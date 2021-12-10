@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import tn.esprit.spring.entity.CategorieClient;
 import tn.esprit.spring.entity.Client;
+import tn.esprit.spring.entity.detailFacture;
 
 @Repository
 public interface ClientRepository extends CrudRepository<Client, Long> {
@@ -20,6 +21,11 @@ public interface ClientRepository extends CrudRepository<Client, Long> {
 	
 	@Query("SELECT c FROM Client c WHERE c.dateNaissance BETWEEN :d1 and :d2")
 	List<Client> retrieveClientsByDateNaissance(@Param("d1") Date d1 , @Param("d2") Date d2);
+	
+	
+
+	
+	
 	
 	
 	

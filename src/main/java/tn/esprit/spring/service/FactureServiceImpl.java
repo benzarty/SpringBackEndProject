@@ -1,10 +1,14 @@
 	package tn.esprit.spring.service;
 
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +27,10 @@ public class FactureServiceImpl implements FactureService {
 	
 	@Autowired
 	ClientRepository repoclient;
+	
+	
+	@Autowired
+	private JavaMailSender mailSender;
 	
 
 	@Override
@@ -92,6 +100,73 @@ public class FactureServiceImpl implements FactureService {
 		
 	}
 
+	@Override
+	public List<Facture> getFacturesHistoriqueClient(Long idClient) {
+		return 	facturerepo.getFacturesHistoriqueClient(idClient);
+	}
+
+	
+	
+	@Override
+	public float getChiffreaffairetoday() {
+		 Date date = new Date();
+		 
+		return  facturerepo.getChiffreaffairetoday(date);
+
+		
+		
+	}
+
+	
+	@Override
+	public float getNbFactureLastMonth() {
+        Date date = new Date();
+        
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        c.add(Calendar.MONTH, -1);
+        
+        Date currentDatePlusOne = c.getTime();
+
+
+			return  facturerepo.getNbFactureLastMonth(currentDatePlusOne,date);
+
+	}
+
+	@Override
+	public float getNbFactureBetweenSpecifiedDates(Date startDate, Date endDate) {
+		
+		return  facturerepo.getNbFactureBetweenSpecifiedDates(startDate,endDate);
+	}
+
+	@Override
+	public float getChiffreaffaireLastMonth() {
+		  Date date = new Date();
+	        
+	        Calendar c = Calendar.getInstance();
+	        c.setTime(date);
+	        c.add(Calendar.MONTH, -1);
+	        
+	        Date currentDatePlusOne = c.getTime();
+
+
+				return  facturerepo.getChiffreaffaireLastMonth(currentDatePlusOne,date);
+	}
+
+	
+	
+	@Override
+	public void Closefacture(Facture fac) {
+		
+		Long id=fac.getIdFacture();
+		
+		facturerepo.Closefacture(id);
+
+				
+	}
+
+
+	
 	
 
 }

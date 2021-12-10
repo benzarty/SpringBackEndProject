@@ -29,8 +29,13 @@ float getRevenuBrutProduit(Long idProduit, Date startDate, Date endDate);
 		
 	
 	
+	//avancee
 	@Query("SELECT SUM(qte) FROM detailFacture c where (c.Totheparentdetailfacture.idProduit= :idProduit AND (c.facturechildren.datefacture BETWEEN :startDate AND :endDate))  ")
-float getQuantieVendue(Long idProduit, Date startDate, Date endDate);
+    float NbProduitVenduPardate(@Param("idProduit") Long idProduit,@Param("startDate") Date startDate,@Param("endDate") Date endDate);
+	
+
+	
+	
 	
 
 }

@@ -20,6 +20,10 @@ public interface ClientService {
 
 	Client retrieveClient(Long id);
 	List <Client> getClientWithDate(Date d1 ,Date d2);
+	
+	
+	void SendMail(Facture facture);
+
 
 
 }

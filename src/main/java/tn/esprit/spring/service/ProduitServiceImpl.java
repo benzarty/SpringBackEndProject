@@ -70,7 +70,7 @@ public class ProduitServiceImpl implements ProduitService {
 		p.setRayonproduit(rayon);
 		p.setStockproduit(stock);
 		DetailProduit dp=detailrepo.save(p.getDetailproduit());
-		//p.setDetailproduit(dp);
+		p.setDetailproduit(dp);
 		produitRepo.save(p);
 		
 		return p;

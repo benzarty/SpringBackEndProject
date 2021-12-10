@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.ApiOperation;
 import tn.esprit.spring.entity.Client;
+import tn.esprit.spring.entity.Facture;
 import tn.esprit.spring.service.ClientServiceImpl;
 
 @RestController
@@ -84,6 +85,18 @@ return clientService.updateClient(client);
 
 
 
+
+// http://localhost:8089/SpringMVC/client/add-client
+@PostMapping("/SendMail")
+@ResponseBody
+public void SendMail(@RequestBody Facture facture)
+{
+	
+	
+	clientService.SendMail(facture);
+
+   
+}	
 
 
 
