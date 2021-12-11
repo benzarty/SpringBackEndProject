@@ -13,26 +13,18 @@ import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.entity.detailFacture;
 
 @Repository
-public interface ClientRepository extends CrudRepository<Client, Long> {
+public interface ClientRepository extends CrudRepository <Client, Long>{
+	
+	
+	
+	
+		@Query("SELECT c FROM Client c WHERE c.dateNaissance between :d1 and :d2")
+		List<Client> retrieveClientsByDateNaissance(@Param("d1") Date firstDate, @Param("d2") Date secondDate );
+		
+	
+		//@Query("select c.factures.montantFacture from client c where c.categorieClient = :ct and c.factures.dateFacture between :d1 and :d2")
+	    //List<Facture> getMontantFactureParCategorieClient(@Param("ct") CategorieClient categorieClient,@Param("d1") Date startDate, @Param("d2") Date endDate); 
 
-	void findByDateNaissanceGreaterThan(Date date);
-	
-	
-	
-	@Query("SELECT c FROM Client c WHERE c.dateNaissance BETWEEN :d1 and :d2")
-	List<Client> retrieveClientsByDateNaissance(@Param("d1") Date d1 , @Param("d2") Date d2);
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-//	@Query(value = "SELECT c FROM Client c WHERE c.dateNaissance BETWEEN '01/01/1995' and '31/12/1995'" ,nativeQuery = true)
-//	List<Client> retrieveClientsByDateNaisance();
-
+		//query syntax error client is not mapped [select c.factures.montantFacture from client c where c.categorieClient = :ct and c.factures.dateFacture between :d1 and :d2]
 }
+
