@@ -28,7 +28,6 @@ import tn.esprit.spring.entity.Stock;
 import tn.esprit.spring.service.StockService;
 
 @CrossOrigin(origins = "http://localhost:4200")
-
 @RestController
 @RequestMapping("/stock")
 public class StockController {
@@ -39,7 +38,7 @@ public class StockController {
     //http://localhost:8089/SpringMVC/stock/add-stock
 	@PostMapping("/add-stock")
 	@ApiOperation(value = "ajouter stock")
-	public ResponseEntity addStock(@Valid @NotNull @RequestBody Stock s) {
+	public ResponseEntity addStock(@Valid @RequestBody Stock s) {
 		return new ResponseEntity<Stock>(stockService.addStock(s),HttpStatus.CREATED);
 		
 	}
@@ -68,7 +67,7 @@ public class StockController {
 	@PutMapping("/modify-stock")
 	@ApiOperation(value = "modifier stock")
 	@ResponseBody
-	public ResponseEntity modifyStock(@RequestBody Stock stock) {
+	public ResponseEntity modifyStock(@Valid @RequestBody Stock stock) {
 		if(stockService.updateStock(stock)!=null){
 			return new ResponseEntity(stockService.updateStock(stock) ,HttpStatus.ACCEPTED);
 		}

@@ -2,6 +2,7 @@ package tn.esprit.spring.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -45,29 +46,30 @@ public class RayonController {
 	@Autowired
 	RayonServiceImpl servicerayon;
 	
+	
+	// http://localhost:8089/SpringMVC/rayon/add-rayon
+	@PostMapping("/add-rayon")
+	@ResponseBody
+	public Rayon addRayon(@Valid @RequestBody Rayon r)
+	{
+		return servicerayon.addRayon(r);
+	}
+	
 	// http://localhost:8089/SpringMVC/client/retrieve-all-rayon
 	@GetMapping("/retrieve-all-rayon")
 	@ResponseBody
 	public List<Rayon>getRayon() {
-	List<Rayon> listrayons = servicerayon.retrieveAllRayons();
-	return listrayons;
+		return servicerayon.retrieveAllRayons();
 	}
 
 	//http://localhost:8089/SpringMVC/rayon/retrieve-rayon/8
 	@GetMapping("/retrieve-rayon/{rayon-id}")
 	@ResponseBody
 	public Rayon retrieveStock(@PathVariable("rayon-id") Long rayonId) {
-	return servicerayon.retrieveRayon(rayonId);
+		return servicerayon.retrieveRayon(rayonId);
 	}
 	
-	// http://localhost:8089/SpringMVC/rayon/add-rayon
-	@PostMapping("/add-rayon")
-	@ResponseBody
-	public Rayon addRayon(@RequestBody Rayon c3)
-	{
-		Rayon rayonn = servicerayon.addRayon(c3);
-	return rayonn;
-	}
+
 
 	//http://localhost:8089/SpringMVC/rayon/remove-rayon/{rayon-id}
 	@DeleteMapping("/remove-rayon/{rayon-id}")
@@ -79,7 +81,7 @@ public class RayonController {
 	//http://localhost:8089/SpringMVC/rayon/modify-rayon
 	@PutMapping("/modify-rayon")
 	@ResponseBody
-	public Rayon modifyrayon(@RequestBody Rayon rayon) {
-	return servicerayon.updateRayon(rayon);
+	public Rayon modifyrayon( @Valid @RequestBody Rayon rayon) {
+		return servicerayon.updateRayon(rayon);
 	}
 }

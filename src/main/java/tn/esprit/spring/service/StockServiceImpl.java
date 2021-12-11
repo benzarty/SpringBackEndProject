@@ -1,5 +1,7 @@
 package tn.esprit.spring.service;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -31,6 +33,7 @@ public class StockServiceImpl implements StockService {
 	@Override
 	public Stock updateStock(Stock s) {
 		if(this.stockRepo.existsById(s.getIdStock())){
+			s.setDateDerniereModification(new Date());
 			return this.stockRepo.save(s);
 		 }
 		 return null;	
