@@ -11775,3 +11775,71 @@ Caused by: com.mysql.cj.exceptions.DataReadException: Zero date value prohibited
 2021-12-11 17:51:11.819  INFO 28880 --- [http-nio-8075-exec-10] tn.esprit.spring.LoggingAspect           : Before method invoked::List tn.esprit.spring.service.StockServiceImpl.retrieveAllStocks()
 2021-12-11 17:51:11.827  INFO 28880 --- [http-nio-8075-exec-10] tn.esprit.spring.LoggingAspect           : AfterReturning method invoked::List tn.esprit.spring.service.StockServiceImpl.retrieveAllStocks()
 2021-12-11 17:51:11.827  INFO 28880 --- [http-nio-8075-exec-10] tn.esprit.spring.LoggingAspect           : After method invoked::List tn.esprit.spring.service.StockServiceImpl.retrieveAllStocks()
+2021-12-11 17:51:11.827  INFO 28880 --- [http-nio-8075-exec-10] tn.esprit.spring.LoggingAspect           : Method execution time: 8 milliseconds.
+2021-12-11 17:51:49.742  INFO 28880 --- [http-nio-8075-exec-1] tn.esprit.spring.LoggingAspect           : Before method invoked::List tn.esprit.spring.service.StockServiceImpl.retrieveAllStocks()
+2021-12-11 17:51:49.913  INFO 28880 --- [http-nio-8075-exec-1] tn.esprit.spring.LoggingAspect           : AfterReturning method invoked::List tn.esprit.spring.service.StockServiceImpl.retrieveAllStocks()
+2021-12-11 17:51:49.913  INFO 28880 --- [http-nio-8075-exec-1] tn.esprit.spring.LoggingAspect           : After method invoked::List tn.esprit.spring.service.StockServiceImpl.retrieveAllStocks()
+2021-12-11 17:51:49.913  INFO 28880 --- [http-nio-8075-exec-1] tn.esprit.spring.LoggingAspect           : Method execution time: 171 milliseconds.
+2021-12-11 17:51:54.090  INFO 28880 --- [http-nio-8075-exec-3] tn.esprit.spring.LoggingAspect           : Before method invoked::Stock tn.esprit.spring.service.StockServiceImpl.retrieveStock(Long)
+2021-12-11 17:51:54.096  INFO 28880 --- [http-nio-8075-exec-3] tn.esprit.spring.LoggingAspect           : AfterReturning method invoked::Stock tn.esprit.spring.service.StockServiceImpl.retrieveStock(Long)
+2021-12-11 17:51:54.096  INFO 28880 --- [http-nio-8075-exec-3] tn.esprit.spring.LoggingAspect           : After method invoked::Stock tn.esprit.spring.service.StockServiceImpl.retrieveStock(Long)
+2021-12-11 17:51:54.096  INFO 28880 --- [http-nio-8075-exec-3] tn.esprit.spring.LoggingAspect           : Method execution time: 6 milliseconds.
+2021-12-11 17:51:54.096  INFO 28880 --- [http-nio-8075-exec-3] tn.esprit.spring.LoggingAspect           : Before method invoked::Stock tn.esprit.spring.service.StockServiceImpl.retrieveStock(Long)
+2021-12-11 17:51:54.101  INFO 28880 --- [http-nio-8075-exec-3] tn.esprit.spring.LoggingAspect           : AfterReturning method invoked::Stock tn.esprit.spring.service.StockServiceImpl.retrieveStock(Long)
+2021-12-11 17:51:54.102  INFO 28880 --- [http-nio-8075-exec-3] tn.esprit.spring.LoggingAspect           : After method invoked::Stock tn.esprit.spring.service.StockServiceImpl.retrieveStock(Long)
+2021-12-11 17:51:54.102  INFO 28880 --- [http-nio-8075-exec-3] tn.esprit.spring.LoggingAspect           : Method execution time: 6 milliseconds.
+2021-12-11 17:51:55.276  INFO 28880 --- [http-nio-8075-exec-4] tn.esprit.spring.LoggingAspect           : Before method invoked::Stock tn.esprit.spring.service.StockServiceImpl.updateStock(Stock)
+2021-12-11 17:51:55.280  INFO 28880 --- [http-nio-8075-exec-4] tn.esprit.spring.LoggingAspect           : AfterReturning method invoked::Stock tn.esprit.spring.service.StockServiceImpl.updateStock(Stock)
+2021-12-11 17:51:55.280  INFO 28880 --- [http-nio-8075-exec-4] tn.esprit.spring.LoggingAspect           : After method invoked::Stock tn.esprit.spring.service.StockServiceImpl.updateStock(Stock)
+2021-12-11 17:51:55.280  INFO 28880 --- [http-nio-8075-exec-4] tn.esprit.spring.LoggingAspect           : Method execution time: 4 milliseconds.
+2021-12-11 17:51:55.280  INFO 28880 --- [http-nio-8075-exec-4] tn.esprit.spring.LoggingAspect           : Before method invoked::Stock tn.esprit.spring.service.StockServiceImpl.updateStock(Stock)
+2021-12-11 17:51:55.282  INFO 28880 --- [http-nio-8075-exec-4] tn.esprit.spring.LoggingAspect           : AfterReturning method invoked::Stock tn.esprit.spring.service.StockServiceImpl.updateStock(Stock)
+2021-12-11 17:51:55.282  INFO 28880 --- [http-nio-8075-exec-4] tn.esprit.spring.LoggingAspect           : After method invoked::Stock tn.esprit.spring.service.StockServiceImpl.updateStock(Stock)
+2021-12-11 17:51:55.282  INFO 28880 --- [http-nio-8075-exec-4] tn.esprit.spring.LoggingAspect           : Method execution time: 2 milliseconds.
+2021-12-11 17:51:55.326  INFO 28880 --- [http-nio-8075-exec-5] tn.esprit.spring.LoggingAspect           : Before method invoked::List tn.esprit.spring.service.StockServiceImpl.retrieveAllStocks()
+2021-12-11 17:51:55.339  INFO 28880 --- [http-nio-8075-exec-5] tn.esprit.spring.LoggingAspect           : AfterReturning method invoked::List tn.esprit.spring.service.StockServiceImpl.retrieveAllStocks()
+2021-12-11 17:51:55.339  INFO 28880 --- [http-nio-8075-exec-5] tn.esprit.spring.LoggingAspect           : After method invoked::List tn.esprit.spring.service.StockServiceImpl.retrieveAllStocks()
+2021-12-11 17:51:55.339  INFO 28880 --- [http-nio-8075-exec-5] tn.esprit.spring.LoggingAspect           : Method execution time: 13 milliseconds.
+2021-12-11 17:51:57.878  INFO 28880 --- [http-nio-8075-exec-7] tn.esprit.spring.LoggingAspect           : Before method invoked::int tn.esprit.spring.service.StockServiceImpl.deleteStock(Long)
+2021-12-11 17:51:57.882  INFO 28880 --- [http-nio-8075-exec-7] tn.esprit.spring.LoggingAspect           : AfterReturning method invoked::int tn.esprit.spring.service.StockServiceImpl.deleteStock(Long)
+2021-12-11 17:51:57.883  INFO 28880 --- [http-nio-8075-exec-7] tn.esprit.spring.LoggingAspect           : After method invoked::int tn.esprit.spring.service.StockServiceImpl.deleteStock(Long)
+2021-12-11 17:51:57.883  INFO 28880 --- [http-nio-8075-exec-7] tn.esprit.spring.LoggingAspect           : Method execution time: 5 milliseconds.
+2021-12-11 17:51:57.894  INFO 28880 --- [http-nio-8075-exec-8] tn.esprit.spring.LoggingAspect           : Before method invoked::List tn.esprit.spring.service.StockServiceImpl.retrieveAllStocks()
+2021-12-11 17:51:57.895  INFO 28880 --- [http-nio-8075-exec-8] tn.esprit.spring.LoggingAspect           : AfterReturning method invoked::List tn.esprit.spring.service.StockServiceImpl.retrieveAllStocks()
+2021-12-11 17:51:57.896  INFO 28880 --- [http-nio-8075-exec-8] tn.esprit.spring.LoggingAspect           : After method invoked::List tn.esprit.spring.service.StockServiceImpl.retrieveAllStocks()
+2021-12-11 17:51:57.896  INFO 28880 --- [http-nio-8075-exec-8] tn.esprit.spring.LoggingAspect           : Method execution time: 2 milliseconds.
+2021-12-11 17:52:00.995  INFO 28880 --- [http-nio-8075-exec-10] tn.esprit.spring.LoggingAspect           : Before method invoked::List tn.esprit.spring.service.StockServiceImpl.retrieveAllStocks()
+2021-12-11 17:52:01.013  INFO 28880 --- [http-nio-8075-exec-10] tn.esprit.spring.LoggingAspect           : AfterReturning method invoked::List tn.esprit.spring.service.StockServiceImpl.retrieveAllStocks()
+2021-12-11 17:52:01.013  INFO 28880 --- [http-nio-8075-exec-10] tn.esprit.spring.LoggingAspect           : After method invoked::List tn.esprit.spring.service.StockServiceImpl.retrieveAllStocks()
+2021-12-11 17:52:01.013  INFO 28880 --- [http-nio-8075-exec-10] tn.esprit.spring.LoggingAspect           : Method execution time: 18 milliseconds.
+2021-12-11 17:52:04.859  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : Before method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:52:04.861  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : AfterReturning method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:52:04.861  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : After method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:52:04.861  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : Method execution time: 2 milliseconds.
+2021-12-11 17:53:04.863  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : Before method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:53:04.866  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : AfterReturning method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:53:04.866  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : After method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:53:04.866  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : Method execution time: 3 milliseconds.
+2021-12-11 17:54:04.857  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : Before method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:54:04.860  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : AfterReturning method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:54:04.860  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : After method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:54:04.860  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : Method execution time: 3 milliseconds.
+2021-12-11 17:55:04.860  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : Before method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:55:04.861  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : AfterReturning method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:55:04.861  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : After method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:55:04.861  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : Method execution time: 1 milliseconds.
+2021-12-11 17:56:04.864  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : Before method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:56:04.866  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : AfterReturning method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:56:04.866  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : After method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:56:04.866  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : Method execution time: 2 milliseconds.
+2021-12-11 17:57:04.870  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : Before method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:57:04.872  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : AfterReturning method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:57:04.872  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : After method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:57:04.872  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : Method execution time: 2 milliseconds.
+2021-12-11 17:58:04.856  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : Before method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:58:04.858  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : AfterReturning method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:58:04.858  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : After method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:58:04.858  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : Method execution time: 2 milliseconds.
+2021-12-11 17:59:04.864  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : Before method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:59:04.866  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : AfterReturning method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
+2021-12-11 17:59:04.867  INFO 28880 --- [scheduling-1] tn.esprit.spring.LoggingAspect           : After method invoked::void tn.esprit.spring.service.StockServiceImpl.retrieveStatusStock()
