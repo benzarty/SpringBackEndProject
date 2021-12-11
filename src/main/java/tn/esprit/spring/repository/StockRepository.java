@@ -16,8 +16,10 @@ import tn.esprit.spring.entity.Stock;
 public interface StockRepository extends CrudRepository<Stock, Long> {
 
 	Stock findByLibelleStock(String s);
-	//esm table yebda bil majus
 	@Query("SELECT c FROM Stock c WHERE c.qte <=c.qteMin")
 	List<Stock> retrieveStockByqte();
+	
+	@Query("select s from Stock s where s.dateCreation between :d1 and :d2")
+	List<Stock> getStockWhereDateBetween(@Param("d1") Date start, @Param("d2") Date end);
 	
 }

@@ -1,5 +1,6 @@
 package tn.esprit.spring.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,49 +15,58 @@ import tn.esprit.spring.repository.StockRepository;
 @Service
 public class StockServiceImpl implements StockService {
 
-	
 	@Autowired
-	StockRepository stockrepo;
+	StockRepository stockRepo;
 	
 	@Override
 	public List<Stock> retrieveAllStocks() {
-		// TODO Auto-generated method stub
-		return (List<Stock>) stockrepo.findAll();
+		return (List<Stock>) this.stockRepo.findAll();
 	}
 
 	@Override
 	public Stock addStock(Stock s) {
-		// TODO Auto-generated method stub
-		return stockrepo.save(s);
+		return this.stockRepo.save(s);
 	}
 
 	@Override
-	public Stock updateStock(Stock u) {
-		// TODO Auto-generated method stub
-		return stockrepo.save(u);
+	public Stock updateStock(Stock s) {
+		if(this.stockRepo.existsById(s.getIdStock())){
+			return this.stockRepo.save(s);
+		 }
+		 return null;	
 	}
 
 	@Override
 	public Stock retrieveStock(Long id) {
-		// TODO Auto-generated method stub
-		return stockrepo.findById(id).orElse(null);
+			return this.stockRepo.findById(id).orElse(null);
 	}
 
 	@Override
-	public void deleteStock(Long id) {
-		stockrepo.deleteById(id);
-		
+	public int deleteStock(Long id) {
+		 if(this.stockRepo.existsById(id)){
+			 stockRepo.deleteById(id);
+			 return 1;
+		 }
+		 //log.info("WRONGGG this is the id "+id);
+		 return 0;
 	}
+
 	
+	
+	@Override
 	@Scheduled(fixedRate = 60000)
-	public void fixedRateMethod() {
-		List<Stock> stocks=stockrepo.retrieveStockByqte();
-		for(Stock s:stocks)
-		{
-		log.info(s.getLibelleStock()+"  Stock est en rupture sorry  ");
-		}
-		
-	
+	public void retrieveStatusStock() {
+		List<Stock> my_stock = this.retrieveAllStocks();
+		for(Stock s: my_stock) {
+			if(s.getQte() <= s.getQteMin()) {
+				log.info("Produit "+s.getLibelleStock()+" a une quantit moins que la quanite minmal "+s.getQteMin());
+			}
+		}		
+	}
+
+	@Override
+	public List<Stock> getStockWhereDateBetween(Date startDate, Date endDate) {
+		return this.stockRepo.getStockWhereDateBetween(startDate, endDate);
 	}
 	
 	

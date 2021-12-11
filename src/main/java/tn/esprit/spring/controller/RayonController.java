@@ -2,6 +2,7 @@ package tn.esprit.spring.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,6 +36,7 @@ import org.springframework.web.bind.annotation.RestController;
 import tn.esprit.spring.entity.Rayon;
 import tn.esprit.spring.service.RayonServiceImpl;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/rayon")
 public class RayonController {
@@ -43,7 +45,6 @@ public class RayonController {
 	@Autowired
 	RayonServiceImpl servicerayon;
 	
-	@CrossOrigin(origins = "http://localhost:4200")
 	// http://localhost:8089/SpringMVC/client/retrieve-all-rayon
 	@GetMapping("/retrieve-all-rayon")
 	@ResponseBody
@@ -52,7 +53,6 @@ public class RayonController {
 	return listrayons;
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	//http://localhost:8089/SpringMVC/rayon/retrieve-rayon/8
 	@GetMapping("/retrieve-rayon/{rayon-id}")
 	@ResponseBody
@@ -60,7 +60,6 @@ public class RayonController {
 	return servicerayon.retrieveRayon(rayonId);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
 	// http://localhost:8089/SpringMVC/rayon/add-rayon
 	@PostMapping("/add-rayon")
 	@ResponseBody
@@ -70,8 +69,6 @@ public class RayonController {
 	return rayonn;
 	}
 
-
-	@CrossOrigin(origins = "http://localhost:4200")
 	//http://localhost:8089/SpringMVC/rayon/remove-rayon/{rayon-id}
 	@DeleteMapping("/remove-rayon/{rayon-id}")
 	@ResponseBody
@@ -79,12 +76,10 @@ public class RayonController {
 		servicerayon.deleteRayon(rayonId);
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	//http://localhost:8089/SpringMVC/rayon/modify-rayon
 	@PutMapping("/modify-rayon")
 	@ResponseBody
 	public Rayon modifyrayon(@RequestBody Rayon rayon) {
 	return servicerayon.updateRayon(rayon);
 	}
-
 }

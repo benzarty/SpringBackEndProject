@@ -26,6 +26,10 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.Generated;
+import org.hibernate.annotations.GenerationTime;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 
@@ -67,6 +71,14 @@ public class Stock implements Serializable {
 	@Size(min=3, max=30)
 	//@Column(nullable = false, length=30)
 	private String libelleStock;
+	
+	@ColumnDefault(value="CURRENT_DATE")
+	@Generated(GenerationTime.INSERT)
+	@Temporal(TemporalType.DATE)
+	private Date dateCreation;
+	
+	@Temporal(TemporalType.DATE)
+    private Date dateDerniereModification;
 	
 	
 	
