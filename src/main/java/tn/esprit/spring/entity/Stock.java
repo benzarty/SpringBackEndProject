@@ -90,7 +90,7 @@ public class Stock implements Serializable {
 	//@Column(nullable = false, length=30)
 	private String libelleStock;
 	
-	@ColumnDefault(value="CURRENT_DATE")
+	// @ColumnDefault(value="CURRENT_DATE")
 	@Generated(GenerationTime.INSERT)
 	@Temporal(TemporalType.DATE)
 	private Date dateCreation;
