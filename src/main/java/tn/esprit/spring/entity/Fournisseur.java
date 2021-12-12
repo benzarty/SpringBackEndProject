@@ -24,11 +24,11 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table( name = "Fornissuer")
+@Table( name = "Fournisseur")
 public class Fournisseur implements Serializable  {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	@Column(name="idFournissur")
+	@Column(name="idFournisseur")
 	private Long idFournisseur;
 	private String codeFournisseur;
 	private String libelleFournisseur;
